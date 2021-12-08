@@ -1,0 +1,57 @@
+body {
+  position: relative;
+}
+.form {
+  position: absolute;
+  top: -400px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  background-color: white;
+  padding: 20px;
+  border: solid #1783f734 0.5px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #bfdeff;
+  transition: 0.5s ease-in-out;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+.filter_done_check {
+  padding: 10px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 0px;
+}
+.active {
+  font-weight: bold;
+}
+.filter_active_check {
+  padding: 10px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 0px;
+}
+
+.btn_select_all {
+  width: 150px;
+  height: 50px;
+}
+.btn_delete_all_done {
+  right: 0;
+  width: 100px;
+}
+input[type="checkbox"] {
+  zoom: 1.5;
+}

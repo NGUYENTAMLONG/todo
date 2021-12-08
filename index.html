@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todolist</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center mb-4 mt-4">TODOLIST</h1>
+      <div class="mb-2 d-flex">
+        <input
+          class="form-control mr-4"
+          id="myInput"
+          type="text"
+          placeholder="Tìm kiếm công việc..."
+        />
+
+        <button class="btn btn-primary mr-4 btn_select_all">Tất cả</button>
+        <button class="btn btn-success d-flex createBtn">
+          Thêm việc <i class="fas fa-2x fa-plus-circle ml-2"></i>
+        </button>
+        <button class="btn btn-dark btn_delete_all_done position-fixed">
+          Xóa hết việc đã xong <i class="fas fa-dumpster"></i>
+        </button>
+      </div>
+      <div class="row">
+        <b
+          >Tổng số công việc
+          <span class="badge bg-primary text-light ml-2 mr-4 sumBadge"></span
+        ></b>
+        <b
+          >Số công việc hoàn thành
+          <span class="badge bg-success text-light ml-2 mr-4 sumDone"></span
+        ></b>
+        <b
+          >Số công việc đang tiến hành
+          <span class="badge bg-danger text-light ml-2 mr-4 sumActive"></span
+        ></b>
+        <b>Lọc công việc</b>
+        <p class="mr-3 ml-3 bg-success pr-2 pl-2 pt-2 filter_done_check">
+          Hoàn thành
+        </p>
+        <p class="bg-warning pr-2 pl-2 pt-2 filter_active_check">
+          Đang tiến hành
+        </p>
+      </div>
+      <table class="table table-striped table-dark table-hover table-bordered">
+        <thead>
+          <tr class="text-center">
+            <th scope="col">STT</th>
+            <th scope="col">Công việc</th>
+            <th scope="col">Ghi chú</th>
+            <th scope="col">Thời gian tạo</th>
+            <th scope="col">Trạng thái</th>
+            <th scope="col" colspan="2">Chức năng</th>
+          </tr>
+        </thead>
+        <tbody id="myTable">
+          <!-- <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr> -->
+        </tbody>
+      </table>
+
+      <form class="form" onsubmit="return false">
+        <span class="none"></span>
+        <div class="form-group">
+          <label for="namejob">Tên công việc</label>
+          <input type="text" class="form-control" id="namejob" required />
+          <small id="jobHelpName" class="form-text text-muted"
+            >* Bắt buộc</small
+          >
+        </div>
+        <div class="form-group">
+          <label for="descjob">Ghi chú, mô tả công việc</label>
+          <input type="text" class="form-control" id="descjob" />
+          <small id="jobHelpDesc" class="form-text text-muted"
+            >* Không bắt buộc, mô tả chi tiết công việc</small
+          >
+        </div>
+        <button type="submit" class="btn btn-success btnSubmitCreate pl-4 pr-4">
+          Thêm
+        </button>
+        <button
+          type="submit"
+          class="btn btn-primary btnUpdate"
+          onclick="handleSubmit()"
+        >
+          Cập nhật
+        </button>
+        <button class="btn btn-secondary float-right btnCancel">Hủy bỏ</button>
+      </form>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
